@@ -1,9 +1,9 @@
 #!/bin/bash
 icon() {
-    [ "$1" -lt "15" ] && printf "" && exit
-    [ "$1" -lt "35" ] && printf "" && exit
-    [ "$1" -lt "60" ] && printf "" && exit
-    [ "$1" -lt "80" ] && printf "" && exit
+    [ "$1" -lt 15 ] && printf "" && exit
+    [ "$1" -lt 35 ] && printf "" && exit
+    [ "$1" -lt 60 ] && printf "" && exit
+    [ "$1" -lt 80 ] && printf "" && exit
     printf ""
 }
 
@@ -16,10 +16,11 @@ while read line; do
 
     #Battery Down 
   if echo "$line" | grep  "Discharging," > /dev/null; then 
-    if [ $percent -lt "16" ]; then
+    if [ $percent -lt 16 ]; then
       printf "^c#fe624d^$(icon "$percent") "
-      printf "$percent%%^d^ "
-    elif [ $percent -lt "31" ]; then
+      printf "$percent%%^d^ " &&
+      notify-send -u critical -t 5000 "Battery Low 🔋" "Connect please"
+    elif [ $percent -lt 31 ]; then
       printf "^c#e8e66e^$(icon "$percent") "
       printf "$percent%%^d^ "
     else
@@ -28,10 +29,11 @@ while read line; do
     fi
     #Battery Full
   elif echo "$line" | grep "Full" > /dev/null; then
-    printf "^c#fe213b^$IC_PLUG 100%%^d^ "
+    printf "^c#fe213b^$IC_PLUG 100%%^d^ " &&
+    notify-send "Battery Full 🔋" "Disconnect please"
     #Charging
   elif ! echo "$line" | grep "Unknown" > /dev/null; then
-    if [ $percent -eq "100" ]; then
+    if [ $percent -eq 100 ]; then
        printf "^c#fe213b^$IC_PLUG 100%%^d^ "
     else
 	printf "^c#a7fe21^$IC_CURRENT $percent%%^d^ "

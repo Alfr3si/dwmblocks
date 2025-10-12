@@ -8,6 +8,12 @@ str(){
   echo "$1"
 }
 
+case $BLOCK_BUTTON in
+    1) pamixer -t ;;
+    4) pamixer -i 2;; 
+    5) pamixer -d 2;;
+esac
+
 if [ "$(pamixer --get-mute)" = "true" ]; then
   str "   "
   exit 0
