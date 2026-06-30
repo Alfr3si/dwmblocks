@@ -18,7 +18,8 @@ case "$F_clock" in
 	"12") I_clock="󱑖" ;;
 esac
 
-date="$(date '+%A, %d-%m-%Y')"
+# date="$(date '+%A, %d-%m-%Y')"
+date="$(date '+%Y %b %d (%a)')"
 clock=$(date "+ %I:%M%p")
 print_format="$I_date $date $I_clock $clock"
 echo $print_format
