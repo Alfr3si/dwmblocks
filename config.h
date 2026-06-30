@@ -18,14 +18,10 @@
 
 // Define blocks for the status feed as X(icon, cmd, interval, signal).
 #define BLOCKS(X)                                      \
-    X("", "~/.dwm/dwmblocks/scripts/memory", 2, 0)     \
-    X("", "~/.dwm/dwmblocks/scripts/cpu", 2, 0)        \
-    X("", "~/.dwm/dwmblocks/scripts/cpuTemp", 10, 0)   \
-    X("", "~/.dwm/dwmblocks/scripts/pacman", 7200, 5)  \
-    X("", "~/.dwm/dwmblocks/scripts/volume", 0, 6)     \
-    X("", "~/.dwm/dwmblocks/scripts/brightness", 0, 7) \
-    X("", "~/.dwm/dwmblocks/scripts/keymap", 0, 8)     \
-    X("", "~/.dwm/dwmblocks/scripts/battery", 30, 0)   \
-    X("", "~/.dwm/dwmblocks/scripts/clock", 2, 0)
+    X("", "~/.config/dwm/dwmblocks/scripts/memory", 2, 0)     \
+    X("", "~/.config/dwm/dwmblocks/scripts/cpu", 2, 0)        \
+    X("", "~/.config/dwm/dwmblocks/scripts/cpuTemp", 10, 0)   \
+    X("", "~/.config/dwm/dwmblocks/scripts/volume", 0, 6)     \
+    X("", "~/.config/dwm/dwmblocks/scripts/clock", 2, 0)
 
 #endif  // CONFIG_H
