@@ -15,15 +15,15 @@ case $BLOCK_BUTTON in
 esac
 
 if [ "$(pamixer --get-mute)" = "true" ]; then
-  str "   "
+  str "  "
   exit 0
 fi
 
 v=$(vol)
 if [ "$v" -eq "100" ]; then
-  str " 100% "
+  str "100% "
 elif [ "$v" -ge "30" ]; then
-  str "  $v% "
+  str "$v%"
 else 
-  str "  $v% "
+  str "$v%"
 fi
