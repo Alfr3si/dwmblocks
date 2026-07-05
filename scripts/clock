@@ -20,5 +20,5 @@ esac
 # date="$(date '+%A, %d-%m-%Y')"
 date="$(date '+%Y %b %d (%a)')"
 clock=$(date "+%I:%M%p")
-print_format="$date $I_clock $clock"
+print_format="🗓️$date $I_clock$clock"
 echo $print_format

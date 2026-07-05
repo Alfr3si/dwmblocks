@@ -1,3 +1,4 @@
+#! /bin/bash
 cpu_Temp=$(sensors | grep "Package id 0" | awk '{print$4}' | tr -d '+')
 cpu_T=${cpu_Temp%%.*}
-echo "$cpu_T°C"
+echo "🌡️$cpu_T°C"

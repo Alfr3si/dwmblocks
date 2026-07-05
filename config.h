@@ -20,8 +20,8 @@
 #define BLOCKS(X)                                      \
     X("", "~/.config/dwm/dwmblocks/scripts/memory", 2, 0)     \
     X("", "~/.config/dwm/dwmblocks/scripts/cpu", 2, 0)        \
-    X("🌡️", "~/.config/dwm/dwmblocks/scripts/cpuTemp", 10, 0)   \
-    X("📢", "~/.config/dwm/dwmblocks/scripts/volume", 0, 6)     \
-    X("🗓️ ", "~/.config/dwm/dwmblocks/scripts/clock", 2, 0)
+    X("", "~/.config/dwm/dwmblocks/scripts/cpuTemp", 10, 0)   \
+    X("", "~/.config/dwm/dwmblocks/scripts/volume", 0, 6)     \
+    X("", "~/.config/dwm/dwmblocks/scripts/clock", 2, 0)
 
 #endif  // CONFIG_H
