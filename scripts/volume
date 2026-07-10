@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Detecta si el puerto de audífonos está activo en ALSA
+if amixer -c 0 contents | grep -A 2 -i "headphone" | grep -q "values=on"; then
+  ICONO="🎧"
+else
+  ICONO="📢"
+fi
+
 vol(){
   pamixer --get-volume
 }
@@ -10,8 +17,8 @@ str(){
 
 case $BLOCK_BUTTON in
     1) pamixer -t ;;
-    4) pamixer -i 2;; 
-    5) pamixer -d 2;;
+    4) pamixer -i 2 ;; 
+    5) pamixer -d 2 ;;
 esac
 
 if [ "$(pamixer --get-mute)" = "true" ]; then
@@ -20,10 +27,10 @@ if [ "$(pamixer --get-mute)" = "true" ]; then
 fi
 
 v=$(vol)
-if [ "$v" -eq "100" ]; then
-  str "100% "
-elif [ "$v" -ge "30" ]; then
-  str "📢$v%"
+if [ -z "$v" ]; then v=0; fi
+
+if [ "$v" -ge "100" ]; then
+  str "${ICONO}Max"
 else 
-  str "📢$v%"
+  str "${ICONO}$v%"
 fi
